@@ -1,6 +1,6 @@
 # packet capture
 Capture raw packets from layer 3 and above using python.
-For the time being it only works on windows but I will soon update it for other platform as well.
+For the time being it only works on windows and with limited filters but it will soon be updated and for other platform as well.
 
 
 ### Installation
