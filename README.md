@@ -16,4 +16,6 @@ or if you don't have python on PATH you can use this command instead
 ```cmd
 py -m pip install socket
 ```
-- To use refer to <a href=''>Wiki</a>
+
+### Usage
+For Windows <a href=''>Wiki</a> :smile:
