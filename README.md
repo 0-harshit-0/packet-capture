@@ -1,4 +1,4 @@
-# packet capture
+# Packet Capture
 Capture raw packets from layer 3 and above using python.
 For the time being it only works on windows and with limited filters but it will soon be updated and for other platform as well.
 
@@ -18,4 +18,4 @@ py -m pip install socket
 ```
 
 ### Usage
-For Windows <a href=''>Wiki</a> :smile:
+For Windows <a href='https://github.com/0-harshit-0/packet-capture/wiki#windows-commands'>Wiki</a> :smile:
