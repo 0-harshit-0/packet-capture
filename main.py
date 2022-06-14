@@ -25,10 +25,10 @@ def N(binary):
 	if J(A)<8:A=N('0'+A)
 	return A
 def F():
-	c=' ';b='.';d=B.gethostbyname(B.gethostname());E=B.socket(B.AF_INET,B.SOCK_RAW,B.IPPROTO_IP);E.bind(('192.168.29.59',0));E.setsockopt(B.IPPROTO_IP,B.IP_HDRINCL,1);E.ioctl(B.SIO_RCVALL,B.RCVALL_ON);W,e=E.recvfrom(65565);D('\n --------------- IP Packet ---------------');A=R(W)
+	d=' ';c='.';W=B.gethostbyname(B.gethostname());E=B.socket(B.AF_INET,B.SOCK_RAW,B.IPPROTO_IP);E.bind((W,0));E.setsockopt(B.IPPROTO_IP,B.IP_HDRINCL,1);E.ioctl(B.SIO_RCVALL,B.RCVALL_ON);X,e=E.recvfrom(65565);D('\n --------------- IP Packet ---------------');A=R(X)
 	if J(sys.argv)>1 and C(sys.argv[1])!=C(A[7]):return 0
-	X={'version':C(A[0],2),'header length':C(A[1],2),'tos (type of service)':A[2],'total length':A[3],'identification':A[4],V:A[5],'ttl (time to live)':A[6],'protocol':K.format(A[7],Q[A[7]]),M:K.format(L(A[8]),A[8]),'source address':b.join((T(C(B,16))for B in[A[9].hex()[B:B+2]for B in U(0,J(A[9].hex()),2)])),'destination address':b.join((T(C(B,16))for B in[A[10].hex()[B:B+2]for B in U(0,J(A[10].hex()),2)]))}
-	for (H,I) in X.items():D(f"{H:25}: {I}")
+	Y={'version':C(A[0],2),'header length':C(A[1],2),'tos (type of service)':A[2],'total length':A[3],'identification':A[4],V:A[5],'ttl (time to live)':A[6],'protocol':K.format(A[7],Q[A[7]]),M:K.format(L(A[8]),A[8]),'source address':c.join((T(C(B,16))for B in[A[9].hex()[B:B+2]for B in U(0,J(A[9].hex()),2)])),'destination address':c.join((T(C(B,16))for B in[A[10].hex()[B:B+2]for B in U(0,J(A[10].hex()),2)]))}
+	for (H,I) in Y.items():D(f"{H:25}: {I}")
 	D('\n --------------- transport ---------------');F=S(A[7],A[11])
 	if F:
 		O=F[0]
@@ -36,9 +36,9 @@ def F():
 	else:O='protocol not available'
 	D('\n --------------- data ---------------')
 	if F:
-		Y=c.join((format(C(A),'b')for A in F[1])).split(c);P=G
-		for Z in Y:P+=chr(C(N(Z),2))
-		a={'len':J(F[1]),'raw':F[1],'parsed':P}
-		for (H,I) in a.items():D(f"{H:25}: {I}")
+		Z=d.join((format(C(A),'b')for A in F[1])).split(d);P=G
+		for a in Z:P+=chr(C(N(a),2))
+		b={'len':J(F[1]),'raw':F[1],'parsed':P}
+		for (H,I) in b.items():D(f"{H:25}: {I}")
 	D('\n --------------- end ---------------');E.ioctl(B.SIO_RCVALL,B.RCVALL_OFF);E.close()
 while True:F()
