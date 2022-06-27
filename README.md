@@ -1,6 +1,6 @@
 # Packet Capture
 Capture raw packets from layer 3 and above using python.
-For the time being it only works on windows and with limited filters but it will soon be updated and for other platform as well.
+It only works on windows and but it will soon be updated for other platforms as well.
 
 
 ### Installation
@@ -14,7 +14,7 @@ pip install socket
 ```
 or if you don't have python on PATH you can use this command instead
 ```cmd
-py -m pip install socket
+py -m pip install socket struct
 ```
 
 ### Usage
