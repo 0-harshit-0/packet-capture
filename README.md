@@ -1,5 +1,5 @@
 # Packet Capture
-Capture raw packets from layer 2 and above using libpcap.
+Capture raw packets using libpcap.
 It only works on windows and but it will soon be updated for other platforms as well.
 
 
