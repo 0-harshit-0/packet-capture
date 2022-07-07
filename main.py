@@ -1,81 +1,85 @@
-g=b'hey!! how are you?'
-f='www.google.com'
-e='flags'
-d='Use for experimentation and testing'
-V='.'
-U=Exception
-T=str
-O='checksum'
-N=len
-M=hex
-L='\n'
-K='{}({})'
-H=''
-E=int
-D=print
-A='Unassigned'
-W=['HOPOPT','ICMP','IGMP','GGP','IP-in-IP','ST','TCP','CBT','EGP','IGP','BBN-RCC-MON','NVP-II','PUP','ARGUS','EMCON','XNET','CHAOS','UDP','MUX','DCN-MEAS','HMP','PRM','XNS-IDP','TRUNK-1','TRUNK-2','LEAF-1','LEAF-2','RDP','IRTP','ISO-TP4','NETBLT','MFE-NSP','MERIT-INP','DCCP','3PC','IDPR','XTP','DDP','IDPR-CMTP','TP++','IL','IPv6','SDRP','IPv6-Route','IPv6-Frag','IDRP','RSVP','GRE','DSR','BNA','ESP','AH','I-NLSP','SwIPe','NARP','MOBILE','TLSP','SKIP','IPv6-ICMP','IPv6-NoNxt','IPv6-Opts',H,'CFTP',H,'SAT-EXPAK','KRYPTOLAN','RVD','IPPC',H,'SAT-MON','VISA','IPCU','CPNX','CPHB','WSN','PVP','BR-SAT-MON','SUN-ND','WB-MON','WB-EXPAK','ISO-IP','VMTP','SECURE-VMTP','VINES','TTP / IPTM','NSFNET-IGP','DGP','TCF','EIGRP','OSPF','Sprite-RPC','LARP','MTP','AX.25','OS','MICP','SCC-SP','ETHERIP','ENCAP',H,'GMTP','IFMP','PNNI','PIM','ARIS','SCPS','QNX','A/N','IPComp','SNP','Compaq-Peer','IPX-in-IP','VRRP','PGM',H,'L2TP','DDX','IATP','STP','SRP','UTI','SMP','SM','PTP','IS-IS over IPv4','FIRE','CRTP','CRUDP','SSCOPMCE','IPLT','SPS','PIPE','SCTP','FC','RSVP-E2E-IGNORE','Mobility Header','UDPLite','MPLS-in-IP','manet','HIP','Shim6','WESP','ROHC','Ethernet',A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,d,d,'Reserved']
-F='\x1b[0m'
-R='\x1b[0;30;41m'
-P='\x1b[0;30;42m'
-X='\x1b[0;30;46m'
-import sys as Q,socket as B,os,struct as I
-os.system(H)
-def Y(raw_data):B=raw_data;C,H,J,L,N,P,A,D,Q,R=I.unpack('!BBHHHBBH4s4s',B[:20]);S=f"{C:08b}"[:4];U=f"{C:08b}"[4:];F=V.join((T(E(A))for A in Q));G=V.join((T(E(A))for A in R));X=B[20:];Y={'version':E(S,2),'header length':E(U,2),'tos (type of service)':H,'total length':J,'identification':L,e:N,'ttl (time to live)':P,'protocol':K.format(A,W[A]),O:K.format(M(D),D),'source address':F,'destination address':G};return Y,X,A,F,G
-def Z(proto,raw_data):
-	g='destination port';f='source port';d='type';F=proto;B=raw_data
-	if F==1:C,Q,A,R,D=I.unpack('!BBHHH',B[:8]);G=B[8:];H={d:C,'code':Q,O:K.format(M(A),A),'identifier':R,'sequence number':D}
-	if F==99999:C,J,A,S,D,U,W=I.unpack('!BBH4sBBH',B[:12]);G=B[12:];H={d:f"{C:8b}"[:3],'type1':f"{C:8b}"[3:4],'type2':f"{C:8b}"[4:],'max res. time':J,O:K.format(M(A),A),'group address':V.join((T(E(A))for A in S)),'seq':D,'QQIC':U,'number of sources':W}
-	elif F==17:L,N,X,A=I.unpack('!HHHH',B[:8]);G=B[8:];H={f:L,g:N,'length':X,O:K.format(M(A),A)}
-	elif F==6:L,N,D,Y,P,Z,A,a=I.unpack('!HHIIHHHH',B[:20]);G=B[20:];b=f"{P:16b}"[:4];J=f"{P:16b}"[4:7];c=f"{P:16b}"[7:];H={f:L,g:N,'sequece number':D,'acknowledge number':Y,'data offset':E(b,2),'reserved':J,e:c,'windows size':Z,O:K.format(M(A),A),'urgent pointer':a}
+_I=b'hey!! how are you?'
+_H='www.google.com'
+_G=' Filtered packet '
+_F='Use for experimentation and testing'
+_E='utf-8'
+_D='checksum'
+_C='{}({})'
+_B='\n'
+_A='Unassigned'
+protocol_map=['HOPOPT','ICMP','IGMP','GGP','IP-in-IP','ST','TCP','CBT','EGP','IGP','BBN-RCC-MON','NVP-II','PUP','ARGUS','EMCON','XNET','CHAOS','UDP','MUX','DCN-MEAS','HMP','PRM','XNS-IDP','TRUNK-1','TRUNK-2','LEAF-1','LEAF-2','RDP','IRTP','ISO-TP4','NETBLT','MFE-NSP','MERIT-INP','DCCP','3PC','IDPR','XTP','DDP','IDPR-CMTP','TP++','IL','IPv6','SDRP','IPv6-Route','IPv6-Frag','IDRP','RSVP','GRE','DSR','BNA','ESP','AH','I-NLSP','SwIPe','NARP','MOBILE','TLSP','SKIP','IPv6-ICMP','IPv6-NoNxt','IPv6-Opts','','CFTP','','SAT-EXPAK','KRYPTOLAN','RVD','IPPC','','SAT-MON','VISA','IPCU','CPNX','CPHB','WSN','PVP','BR-SAT-MON','SUN-ND','WB-MON','WB-EXPAK','ISO-IP','VMTP','SECURE-VMTP','VINES','TTP / IPTM','NSFNET-IGP','DGP','TCF','EIGRP','OSPF','Sprite-RPC','LARP','MTP','AX.25','OS','MICP','SCC-SP','ETHERIP','ENCAP','','GMTP','IFMP','PNNI','PIM','ARIS','SCPS','QNX','A/N','IPComp','SNP','Compaq-Peer','IPX-in-IP','VRRP','PGM','','L2TP','DDX','IATP','STP','SRP','UTI','SMP','SM','PTP','IS-IS over IPv4','FIRE','CRTP','CRUDP','SSCOPMCE','IPLT','SPS','PIPE','SCTP','FC','RSVP-E2E-IGNORE','Mobility Header','UDPLite','MPLS-in-IP','manet','HIP','Shim6','WESP','ROHC','Ethernet',_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_A,_F,_F,'Reserved']
+END='\x1b[0m'
+REDBG='\x1b[0;30;41m'
+GREENBG='\x1b[0;30;42m'
+BLUEBG='\x1b[0;30;46m'
+import sys,socket,os,struct
+os.system('')
+def ethernet_head_parse(raw_data):dest,src,prototype=struct.unpack('!6s6sH',raw_data[:14]);dest_mac=dest.hex();src_mac=src.hex();proto=prototype;data=raw_data[14:];parsed={'dest_mac':':'.join([dest_mac[i:i+2]for i in range(0,len(dest_mac),2)]),'src_mac':':'.join([src_mac[i:i+2]for i in range(0,len(src_mac),2)]),'proto':_C.format(hex(proto),proto)};return parsed,data
+def ipv4_head(raw_data):version_header_length,tos,total_length,identification,flags,ttl,proto,checksum,src,target=struct.unpack('!BBHHHBBH4s4s',raw_data[:20]);version=f"{version_header_length:08b}"[:4];header_length=f"{version_header_length:08b}"[4:];s='.'.join((str(int(x))for x in src));d='.'.join((str(int(x))for x in target));data=raw_data[20:];networkLayer={'version':int(version,2),'header length':int(header_length,2),'tos (type of service)':tos,'total length':total_length,'identification':identification,'flags':flags,'ttl (time to live)':ttl,'protocol':_C.format(proto,protocol_map[proto]),_D:_C.format(hex(checksum),checksum),'source address':s,'destination address':d};return networkLayer,data,proto,s,d
+def transport_parse(proto,raw_data):
+	C='destination port';B='source port';A='type'
+	if proto==1:typ,code,checksum,identifier,seq=struct.unpack('!BBHHH',raw_data[:8]);data=raw_data[8:];parsed={A:typ,'code':code,_D:_C.format(hex(checksum),checksum),'identifier':identifier,'sequence number':seq}
+	if proto==99999:typ,res,checksum,group,seq,qic,source=struct.unpack('!BBH4sBBH',raw_data[:12]);data=raw_data[12:];parsed={A:f"{typ:8b}"[:3],'type1':f"{typ:8b}"[3:4],'type2':f"{typ:8b}"[4:],'max res. time':res,_D:_C.format(hex(checksum),checksum),'group address':'.'.join((str(int(x))for x in group)),'seq':seq,'QQIC':qic,'number of sources':source}
+	elif proto==17:src_port,dest_port,length,checksum=struct.unpack('!HHHH',raw_data[:8]);data=raw_data[8:];parsed={B:src_port,C:dest_port,'length':length,_D:_C.format(hex(checksum),checksum)}
+	elif proto==6:src_port,dest_port,seq,ack,data_flag,ws,checksum,pointer=struct.unpack('!HHIIHHHH',raw_data[:20]);data=raw_data[20:];off=f"{data_flag:16b}"[:4];res=f"{data_flag:16b}"[4:7];flags=f"{data_flag:16b}"[7:];parsed={B:src_port,C:dest_port,'sequece number':seq,'acknowledge number':ack,'data offset':int(off,2),'reserved':res,'flags':flags,'windows size':ws,_D:_C.format(hex(checksum),checksum),'urgent pointer':pointer}
 	else:return False
-	return H,G
-def a(binary):
-	A=binary
-	if N(A)<8:A=a('0'+A)
-	return A
-class J(U):
-	def __init__(A,message=L+X+' Filtered packet '+F):A.message=message;super().__init__(A.message)
-def h(h=f,p=80):A=B.socket(B.AF_INET,B.SOCK_DGRAM);A.sendto(g,(h,p));A.close()
-def i():A=B.socket(B.AF_INET,B.SOCK_STREAM);A.connect((f,80));A.send(g);A.close()
-def b():
-	i=' -------------------- end ------------------- ';X='win32';O=None
+	return parsed,data
+def makeCompleteBinary(binary):
+	if len(binary)<8:binary=makeCompleteBinary('0'+binary)
+	return binary
+class Filter(Exception):
+	def __init__(self,message=_B+BLUEBG+_G+END):self.message=message;super().__init__(self.message)
+def testUDP(h=_H,p=80):so=socket.socket(socket.AF_INET,socket.SOCK_DGRAM);so.sendto(_I,(h,p));so.close()
+def testTCP():so=socket.socket(socket.AF_INET,socket.SOCK_STREAM);so.connect((_H,80));so.send(_I);so.close()
+from ctypes import *
+from libpcap import *
+class Filter(Exception):
+	def __init__(self,message=_B+BLUEBG+_G+END):self.message=message;super().__init__(self.message)
+def packet(pkt_data,pkt_len):
+	A=' -------------------- end ------------------- '
 	try:
-		M=B.getaddrinfo(B.gethostname(),port=0,type=3);S=M[N(M)-1][N(M[N(M)-1])-1]
-		if Q.platform==X:A=B.socket(B.AF_INET,B.SOCK_RAW,B.IPPROTO_IP);A.bind(S);A.setsockopt(B.IPPROTO_IP,B.IP_HDRINCL,1);A.ioctl(B.SIO_RCVALL,B.RCVALL_ON)
-		else:A=B.socket(B.AF_PACKETS,B.SOCK_RAW,B.IPPROTO_IP);A.bind(S)
-		a,j=A.recvfrom(65565);b,c,T,V,W=Y(a)
-		if C.IP is not O and(C.IP!=V and C.IP!=W):raise J()
-		if C.SIP is not O and C.SIP!=V:raise J()
-		if C.DIP is not O and C.DIP!=W:raise J()
-		if C.Protocol is not O and E(C.Protocol)!=T:raise J()
-		D(L+P+' ----------------- IP Layer ----------------- '+F)
-		for (I,K) in b.items():D(f"{I:25}: {K}")
-		D(L+P+' ------------- transport proto -------------- '+F);G=Z(T,c)
-		if G:
-			d=G[0]
-			for (I,K) in d.items():D(f"{I:25}: {K}")
-		else:raise U('protocol disection not supported')
-		D(L+P+' ----------------- payload ------------------ '+F)
-		if G:
-			e=H.join((chr(E(A))for A in G[1]));f={'len':N(G[1]),'raw':G[1],'parsed':e}
-			for (I,K) in f.items():D(f"{I:25}: {K}")
-		D(L+R+i+F)
-		if Q.platform==X:A.ioctl(B.SIO_RCVALL,B.RCVALL_OFF)
-		A.close()
-	except J as g:D(g)
-	except U as h:
-		D(h);D(L+R+i+F)
-		if Q.platform==X:A.ioctl(B.SIO_RCVALL,B.RCVALL_OFF)
-		A.close()
-import argparse as c
-G=c.ArgumentParser()
-G.add_argument('-n','--Number',help='Number of packets to capture')
-G.add_argument('-ip','--IP',help='IP to filter')
-G.add_argument('-sip','--SIP',help='Source IP to filter')
-G.add_argument('-dip','--DIP',help='Destination IP to filter')
-G.add_argument('-proto','--Protocol',help='Protocol to filter')
-C=G.parse_args()
-if C.Number:S=E(C.Number)
-else:S=0x8ac7230489e7ffff
-for j in range(S):b()
+		print(_B+GREENBG+' ----------------- Data Layer ----------------- '+END);st=string_at(pkt_data,pkt_len);eth,data=ethernet_head_parse(st)
+		for (label,value) in eth.items():print(f"{label:25}: {value}")
+		print(_B+GREENBG+' ---------------- Network Layer --------------- '+END);show,d,pro,src,dst=ipv4_head(data)
+		for (label,value) in show.items():print(f"{label:25}: {value}")
+		print(_B+GREENBG+' -------------- Transport Layer --------------- '+END);transport=transport_parse(pro,d)
+		if transport:
+			transportLayer=transport[0]
+			for (label,value) in transportLayer.items():print(f"{label:25}: {value}")
+		else:raise Exception('protocol not supported')
+		print(_B+GREENBG+' ------------------ Payload ------------------ '+END)
+		if transport:
+			dataArr=''.join((chr(int(x))for x in transport[1]));chunk={'len':len(transport[1]),'raw':transport[1],'parsed':dataArr}
+			for (label,value) in chunk.items():print(f"{label:25}: {value}")
+		print(_B+REDBG+A+END)
+	except Exception as e:print(e);print(_B+REDBG+A+END)
+	return 1
+alldevs=pointer(pcap_if())
+fp=pointer(pcap_if())
+errbuf=c_char_p(bytes(PCAP_ERRBUF_SIZE))
+findalldevs(alldevs,errbuf)
+temp=alldevs.contents
+while temp:
+	if'Intel'in temp.description.decode(_E):dev=c_char_p(temp.name);break
+	temp=temp.next.contents
+print('device:',temp.name.decode(_E),temp.description.decode(_E))
+fp=open(dev,100,PCAP_OPENFLAG_PROMISCUOUS,20,None,errbuf)
+header=pointer(pkthdr())
+pkt_data=pointer(c_ubyte())
+freealldevs(alldevs)
+def main():
+	global till;res=next_ex(fp,header,pkt_data)
+	while res>=0 and till>0:
+		if res==0:res=next_ex(fp,header,pkt_data);continue
+		till-=1;packet(pkt_data,header.contents.len);print(_B);res=next_ex(fp,header,pkt_data)
+import argparse
+parser=argparse.ArgumentParser()
+parser.add_argument('-n','--Number',help='Number of packets to capture')
+parser.add_argument('-ip','--IP',help='IP to filter')
+parser.add_argument('-sip','--SIP',help='Source IP to filter')
+parser.add_argument('-dip','--DIP',help='Destination IP to filter')
+parser.add_argument('-proto','--Protocol',help='Protocol to filter')
+args=parser.parse_args()
+if args.Number:till=int(args.Number)
+else:till=0x8ac7230489e7ffff
+main()
