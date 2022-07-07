@@ -1,5 +1,5 @@
 # Packet Capture
-Capture raw packets from layer 3 and above using python.
+Capture raw packets from layer 2 and above using libpcap.
 It only works on windows and but it will soon be updated for other platforms as well.
 
 
@@ -10,11 +10,11 @@ It only works on windows and but it will soon be updated for other platforms as 
 - Navigate to the folder
 - Type:
 ```cmd
-pip install socket
+pip install struct socket ctypes libpcap
 ```
 or if you don't have python on PATH you can use this command instead
 ```cmd
-py -m pip install socket struct
+py -m pip install socket struct socket ctypes libpcap
 ```
 
 ### Usage
