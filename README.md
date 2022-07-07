@@ -10,11 +10,11 @@ It only works on windows and but it will soon be updated for other platforms as 
 - Navigate to the folder
 - Type:
 ```cmd
-pip install struct socket ctypes libpcap
+pip install libpcap
 ```
 or if you don't have python on PATH you can use this command instead
 ```cmd
-py -m pip install socket struct socket ctypes libpcap
+py -m pip install libpcap
 ```
 
 ### Usage
