@@ -1,6 +1,6 @@
 # Packet Capture
 Capture raw packets using libpcap.
-It only works on windows, it will soon be updated for other platforms as well.
+Only works on windows for now, it will soon be updated for other platforms as well.
 
 
 ### Installation
